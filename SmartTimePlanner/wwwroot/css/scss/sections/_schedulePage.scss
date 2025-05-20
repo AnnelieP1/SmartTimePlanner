@@ -1,0 +1,62 @@
+﻿
+
+.fc {
+    background-color: #191919; // darkshades–10
+    color: #F1F1F3; // whiteshades–95
+}
+
+.fc-toolbar-title {
+    color: #FCFCFD; // whiteshades–99
+}
+
+.fc-button {
+    background-color: #007bff; // blue–500
+    color: #FCFCFD; // vit
+    border: none;
+}
+
+.fc-button:hover {
+    background-color: lighten(#007bff, 10%);
+}
+
+.fc-daygrid-day-number,
+.fc-col-header-cell-cushion {
+    color: #F1F1F3; // ljus text
+}
+
+// Gör så att varje event ligger på sin egen rad
+.fc-daygrid-day-events {
+    display: block;
+    overflow: hidden;
+    gap: 4px;
+}
+
+.fc-daygrid-event {
+    background-color: #333333; // darkshades–20
+    color: #F1F1F3;
+    border: 1px solid #59595A; // darkshades–35
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+   
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    cursor: pointer;
+}
+
+.fc-event-title {
+    
+    
+    text-overflow: clip;
+    white-space: nowrap;
+   
+}
+
+.fc-daygrid-event.conflict-event {
+    background-color: #ff0000 !important;
+    color: white !important;
+}
+
+

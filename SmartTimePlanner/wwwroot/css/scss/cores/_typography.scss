@@ -1,0 +1,96 @@
+﻿// Font Sizes
+$font-size-xxl: 3em; // 48px
+$font-size-xl: 2.375em; // 38px
+$font-size-lg: 1.5em; // 24px
+$font-size-md: 1.375em; //22px
+$font-size-sm: 1.125em; // 18px
+$font-size-xs: 1em; // 16px
+
+// Font Weights
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Grayscale Colors
+$gray-15: #262626;
+$gray-20: #333333;
+$gray-30: #4C4C4D;
+$gray-35: #59595A;
+
+// Font Family
+$font-family-vbp: 'Besley', sans-serif;
+
+// Headings (H1 till H6)
+@mixin heading($size, $weight, $color: $gray-15) {
+    font-family: $font-family-vbp;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+    margin: 0;
+}
+
+// Paragraphs och andra texter
+@mixin text($size, $weight, $color: $gray-30) {
+    font-family: $font-family-vbp;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+    margin: 0;
+}
+
+// Rubriker
+h1 {
+    @include heading($font-size-xxl, $font-weight-semibold);
+}
+
+h2 {
+    @include heading($font-size-xl, $font-weight-semibold);
+}
+
+h3 {
+    @include heading($font-size-lg, $font-weight-semibold);
+}
+
+h4 {
+    @include heading($font-size-sm, $font-weight-semibold);
+}
+
+h5 {
+    @include heading($font-size-md, $font-weight-medium);
+}
+
+h6 {
+    @include heading($font-size-sm, $font-weight-medium);
+}
+
+h7 {
+    @include heading($font-size-xs, $font-weight-medium);
+}
+
+// Text och stycken
+p {
+    @include text($font-size-sm, $font-weight-regular);
+}
+
+// Exempel på andra semantiska textstilar
+.subtitle {
+    @include text($font-size-lg, $font-weight-medium);
+}
+
+.text-gray20 {
+    color: $gray-20;
+}
+
+.text-gray30 {
+    color: $gray-30;
+}
+
+.text-gray35 {
+    color: $gray-35;
+}
+
+.text-semibold {
+    font-weight: $font-weight-semibold;
+}

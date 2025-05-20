@@ -1,0 +1,20 @@
+﻿@inherits UmbracoViewPage<Umbraco.Cms.Web.Common.PublishedModels.ScheduleItem>
+
+@{
+    Layout = null;
+   
+    var dayOfWeek = Model.Value("dayOfWeek");
+    var startTime = Model.Value("startTime");
+    var endTime = Model.Value("endTime");
+    var activity = Model.Value("activity");
+}
+
+<div class="schedule-item">
+   
+    <p><strong>Day:</strong> @dayOfWeek</p>
+    <p><strong>Starttime:</strong> @startTime</p>
+    <p><strong>Endtime:</strong> @endTime</p>
+    <p><strong>Activity:</strong> @activity</p>
+</div>
+    
+    

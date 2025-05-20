@@ -1,0 +1,49 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+
+@{
+    Layout = "mainLayout.cshtml";
+    var consultants = Model.Children().Where(x => x.ContentType.Alias == "consultantPage");
+}
+
+
+
+<div class="consultant-container"> 
+    @foreach (var consultant in consultants)
+    {
+        var consultantName = consultant.Value("consultantName") as string;
+        var shortBio = consultant.Value("shortBio") as string;
+        var specialization = consultant.Value("specialization") as string;
+        var profileImage = consultant.Value<IPublishedContent>("profileImage");
+        var schedule = consultant.Value<IEnumerable<BlockListItem>>("consultantSchedule");
+
+        <div class="consultant-profile">
+            <h3>@consultantName</h3>
+            <p><strong>Specialization:</strong> @specialization</p>
+            <p>@shortBio</p>
+
+            @if (profileImage != null)
+            {
+                <img src="@profileImage.Url()" alt="@consultantName" />
+            }
+
+            <section class="consultant-schedule">
+                <h4>Schedule</h4>
+                @if (schedule != null && schedule.Any())
+                {
+                    foreach (var item in schedule)
+                    {
+                        @await Html.PartialAsync("blocklist/ScheduleItem", item.Content)
+                    }
+                }
+                else
+                {
+                    <p>No schedule.</p>
+                }
+            </section>
+        </div>
+    } 
+
+</div>

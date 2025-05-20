@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = "mainLayout.cshtml";
+
+    var consultantName = Model.Value("consultantName");
+    var shortBio = Model.Value("shortBio");
+    var specialization = Model.Value("specialization");
+    var profileImage = Model.Value<IPublishedContent>("profileImage");
+    var schedule = Model.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("consultantSchedule");
+}
+
+
+
+<div class="consultant-profile">
+    <h2>@consultantName</h2>
+    <p><strong>Specialisering:</strong> @specialization</p>
+    <p>@shortBio</p>
+
+    @if (profileImage != null)
+    {
+        <img src="@profileImage.Url()" alt="@consultantName" />
+    }
+
+    <section class="consultant-schedule">
+        <h3>Schema</h3>
+        @if (schedule != null && schedule.Any())
+        {
+            foreach (var item in schedule)
+            {
+                @await Html.PartialAsync("blocklist/ScheduleItem", item.Content)
+            }
+        }
+        else
+        {
+            <p>Inget schema tillgängligt.</p>
+        }
+    </section>
+</div>

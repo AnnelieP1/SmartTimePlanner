@@ -1,0 +1,17 @@
+﻿body {
+    background-color: var(--color-darkshades-15);
+    color: var(--color-whiteshades-97);
+    font-family: 'Besley', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+main {
+    padding: 2rem;
+}

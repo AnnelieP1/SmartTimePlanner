@@ -1,0 +1,75 @@
+﻿.navbar {
+    background-color: var(--color-darkshades-35);
+    padding: 1rem;
+    position: relative;
+    // Hamburger-knappen (dold på desktop)
+    .navbar-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+    }
+    // Länkarna (desktop default)
+    .navbar-links {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                display: block;
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                color: white;
+                background-color: var(--color-darkshades-35);
+                text-decoration: none;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    background-color: var(--color-darkshades-20);
+                    color: white;
+                }
+            }
+
+            &.active a {
+                background-color: var(--color-whiteshades-95);
+                color: var(--color-darkshades-35);
+                font-weight: bold;
+            }
+        }
+    }
+    // Responsiv layout
+    @media (max-width: 768px) {
+        .navbar-toggle {
+            display: flex;
+        }
+
+        .navbar-links {
+            display: none;
+            flex-direction: column;
+            background-color: var(--color-darkshades-35);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-links.active {
+            display: flex;
+        }
+    }
+}

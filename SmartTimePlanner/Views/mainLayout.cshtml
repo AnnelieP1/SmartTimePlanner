@@ -1,0 +1,49 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <title>@Umbraco.AssignedContentItem.Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<script src="~/scripts/fullcalendar/fullcalendar.global.min.js"></script>
+<body>
+
+    <div class="wrapper">
+        <header>
+            @await Html.PartialAsync("_Navbar")
+        </header>
+
+
+
+
+        <main>
+            
+            @RenderBody()
+        </main>
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year @Model.Value("pageTitle")</p>
+        </footer>
+    </div>
+
+    <!-- FullCalendar -->
+    <script src="~/scripts/fullcalendar/fullcalendar.global.min.js"></script>
+
+    <!-- Tippy.js och Popper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <script src="https://unpkg.com/@@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+   
+    <script src="/scripts/main.js"></script>
+
+
+</body>
+</html>

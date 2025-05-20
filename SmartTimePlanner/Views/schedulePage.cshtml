@@ -1,0 +1,49 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = Layout = "~/Views/MainLayout.cshtml"; ;
+}
+
+<form id="schedule-form">
+    <label>
+        Consultant Name:
+        <input type="text" name="consultantName" required />
+    </label><br />
+
+    <label>
+        Day of Week:
+        <select name="dayOfWeek" required>
+            <option value="">-- Select --</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+        </select>
+    </label><br />
+
+    <label>
+        Start Time:
+        <input type="datetime-local" name="startTime" required />
+    </label><br />
+
+    <label>
+        End Time:
+        <input type="datetime-local" name="endTime" required />
+    </label><br />
+
+    <label>
+        Activity:
+        <input type="text" name="activity" required />
+    </label><br />
+
+    <button type="submit">Add Schedule</button>
+</form>
+
+<div id="form-result"></div>
+
+
+<div id="calendar" class="schedule"></div>
+<script src="~/scripts/fullcalendar/init-calendar.js"></script>
+<script src="~/scripts/booking-form.js"></script>
+

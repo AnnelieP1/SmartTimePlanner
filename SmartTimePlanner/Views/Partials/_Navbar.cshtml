@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<nav class="navbar">
+    <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <ul class="navbar-links">
+        @foreach (var item in Umbraco.AssignedContentItem.AncestorOrSelf(1).Children.Where(x => x.IsVisible()))
+        {
+            var activeClass = item.IsAncestorOrSelf(Model) ? "active" : "";
+            <li class="@activeClass">
+                <a href="@item.Url()">@item.Name</a>
+            </li>
+        }
+    </ul>
+</nav>
