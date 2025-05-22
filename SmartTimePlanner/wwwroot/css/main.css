@@ -331,3 +331,29 @@ p {
 .consultant-overview .consultant-card a:hover {
   text-decoration: underline;
 }
+
+.headerloggo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.headerloggo img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .headerloggo img {
+    max-width: 90%;
+    padding: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .headerloggo img {
+    max-width: 100%;
+    padding: 5px;
+  }
+}

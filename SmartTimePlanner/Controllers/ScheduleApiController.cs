@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
 using Umbraco.Cms.Core.Web;
-
 using Umbraco.Cms.Core.Models.Blocks;
-
 using SmartTimePlanner.Models;
 
 namespace SmartTimePlanner.Controllers.Api
